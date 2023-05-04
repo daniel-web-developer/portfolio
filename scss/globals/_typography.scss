@@ -1,0 +1,73 @@
+@use '../util' as *;
+
+h1, h2, h3, h4, h5, h6{
+    font-family: $font-2;
+    font-weight: 700;
+}
+
+h1, h2, h3, h4, h5, h6.p{
+    margin: 0 !important;
+}
+
+h1{
+    font-size: 64px;
+}
+
+h2{
+    font-size: 51px;
+}
+
+h3{
+    font-size: 41px;
+    font-weight: 400;
+}
+
+h4{
+    font-size: 33px;
+}
+
+h5{
+    font-size: 26px;
+}
+
+h6{
+    font-size: 21px;
+}
+
+@media screen and (max-width: 1024px){
+    h1{
+        font-size: 45px;
+    }
+    
+    h2{
+        font-size: 37px;
+    }
+    
+    h3{
+        font-size: 31px;
+        font-weight: 400;
+    }
+    
+    h4{
+        font-size: 26px;
+    }
+    
+    h5{
+        font-size: 21px;
+    }
+    
+    h6{
+        font-size: 18px;
+    }
+
+    p{
+        font-size: 18px !important;
+    }
+}
+
+p{
+    font-family: $font-1;
+    font-size: 21px;
+}
+
+$font-size-p: 21px;

@@ -1,0 +1,35 @@
+{% extends "base-header.html" %}
+
+{% block body %}
+    <div class="mainboiler bp">
+        <h4 class="text-r"><a href="{% url 'blog-index' %}" class="">Return to the blog</a></h4>
+        <div class="article mobile medium">
+            <div class="bp">
+                <div class="flex flex-alignit-c">
+                    <h2 class="bp">{{ article.title }}</h2>
+                    {% if article.edit_date.year == NULL %}
+                        <p class="bp-date"> - Published in: {{ article.pub_date }}</p>
+                    {% else %}
+                        <p class="bp-date"> - Published in: {{ article.pub_date }} | Edited in: {{ article.edit_date }}</p>
+                    {% endif %}
+                </div>
+            </div>
+            <h3>{{ article.content|safe }}</h3>
+        </div>
+        <div class="article desktop">
+            <div class="bp">
+                <div class="flex flex-alignit-c">
+                    <div>
+                        <h2 class="bp">{{ article.title }}</h2>
+                        {% if article.edit_date.year == NULL %}
+                            <p class="bp-date"> - Published in: {{ article.pub_date }}</p>
+                        {% else %}
+                            <p class="bp-date"> - Published in: {{ article.pub_date }} | Edited in: {{ article.edit_date }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <h3>{{ article.content|safe }}</h3>
+        </div>
+    </div>
+{% endblock %}

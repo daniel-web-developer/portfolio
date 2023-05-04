@@ -1,0 +1,145 @@
+.mainboiler{
+    padding: 0px 232px 0px 232px;
+
+    background-color: var(--primary-one);
+}
+
+.bp{
+    margin: 0;
+
+    transition-duration: 100ms;
+
+    color: var(--primary-four);
+
+    &-maintitle{
+        padding: 72px 0px 32px 0px;
+        margin: 0;
+
+        color: var(--primary-four);
+    }
+
+    &-title{
+        text-decoration: underline 1px var(--primary-four);
+        text-underline-offset: 0.05em;
+        transition: text-decoration-color 200ms, text-underline-offset 200ms, color 200ms;
+    }
+
+    &-title:hover{
+        color: var(--secondary-one);
+        text-underline-offset: 0.1em;
+        text-decoration-color: var(--secondary-one);
+    }
+
+    &-date{
+        margin: 0;
+        color: var(--secondary-four);
+    }
+
+    &-articlebody{
+        a{
+            text-decoration: underline !important;
+            transition: all 100ms ease-in-out;
+        }
+        a:hover{
+            color: var(--secondary-one);
+        }
+    }
+}
+
+.article{
+    padding-bottom: 64px;
+}
+
+.text-r{
+    padding: 72px 0px 32px 0px;
+    margin: 0;
+
+    a{
+        text-decoration: underline 1px var(--primary-four);
+        text-underline-offset: 0.1em;
+        transition: text-decoration-color 100ms, text-underline-offset 100ms, color 100ms;
+    }
+
+    a:hover{
+        color: var(--secondary-one);
+        text-underline-offset: 0.2em;
+        text-decoration-color: var(--secondary-one);
+    }
+}
+
+
+@media screen and (max-width: 639px){
+    
+    .mobile{
+        display: none;
+    }
+
+    .mainboiler{
+        padding: 0px 32px 0px 32px;
+    }
+
+    .bp{
+        &-maintitle{
+            padding: 16px 0px 16px 0px;
+        }
+
+        &-title{
+            text-decoration: underline;
+        }
+
+        &-date{
+            padding-bottom: 8px;
+        }
+    }
+
+    .article{
+        padding-bottom: 16px;
+    }
+
+    .text-r{
+        padding: 16px 0px 16px 0px;
+        margin: 0;
+    }
+    
+}
+
+@media screen and (min-width: 640px) and (max-width: 1439px){
+
+    .medium{
+        display: none;
+    }
+
+    .mainboiler{
+        padding: 0px 32px 0px 32px;
+    }
+
+    .bp{
+        &-maintitle{
+            padding: 16px 0px 16px 0px;
+        }
+
+        &-title{
+            text-decoration: underline;
+        }
+
+        &-date{
+            padding-bottom: 8px;
+        }
+    }
+
+    .article{
+        padding-bottom: 16px;
+    }
+
+    .text-r{
+        padding: 16px 0px 16px 0px;
+        margin: 0;
+    }
+    
+}
+
+@media screen and (min-width: 1440px){
+    .desktop{
+        display: none;
+    }
+}

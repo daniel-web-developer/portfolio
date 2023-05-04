@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Daniel's portfolio{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  </head>
+<body>
+  <div class="" id="">
+    <div class="flex flex-justcont-sb flex-alignit-c header">
+      <a class="">Daniel's portfolio</a>
+      <a href="#" id="menuid" class="ham-menu desktop medium">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+      <span id="over" class="overlay-span medium desktop"></span>
+      <div class="mobile">
+        <ul class="flex nav">
+            <li class="">
+              <a href="{% url 'index' %}" class="">Home</a>
+            </li>
+            <li class="nav-links">
+              <a href="{% url 'index' %}#projects" class="">Projects</a>
+            </li>
+            <li class="">
+              <a href="{% url 'index' %}#about" class="">About</a>
+            </li>
+            <li class="nav-links">
+              <a href="{% url 'blog-index' %}" class="">Blog</a>
+            </li>
+            <li class="">
+              <a href="{% url 'index' %}#contact" class="">Contact</a>
+            </li>
+        </ul>
+      </div>
+      <span id="menuMobile" class="medium desktop menu-mobile-span flex flex-justcont-c flex-alignit-c">
+        <ul class="nav">
+          <li class="nav-links">
+            <a href="{% url 'index' %}" class="nav-">Home</a>
+          </li>
+          <li class="nav-links">
+            <a class="">Projects</a>
+          </li>
+          <li class="nav-links">
+            <a href="{% url 'index' %}#about" class="">About</a>
+          </li>
+          <li class="nav-links">
+            <a href="{% url 'blog-index' %}" class="">Blog</a>
+          </li>
+          <li class="nav-links">
+            <a href="{% url 'index' %}#contact" class="">Contact</a>
+          </li>
+      </ul>
+      </span>
+    </div>
+    {% block body %}
+    {% endblock %}
+    <div class="footer flex flex-alignit-c flex-justcont-c">
+      <a href="https://www.linkedin.com/in/daniel-caixeta-922446243/" target="_blank">©2023 Daniel</a>
+    </div>
+  </div>
+  <script src="{% static 'script.js' %}" defer></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+
+{% extends "base-header.html" %}
+{% block title %}Daniel's blog{% endblock %}
+
+{% block body %}
+    <div class="mainboiler">
+        <div class="bp">
+            <h1 class="bp-maintitle">BLOG</h1>
+             {% for article in articles %}
+                <div class="article mobile medium">
+                    <div class="bp">
+                        <div class="flex flex-alignit-c">
+                            <h2 class="bp">
+                                <a href="{% url 'article-number' article.id %}" class="bp-title">{{ article.title }}</a>
+                            </h2>
+                            {% if article.edit_date.year == NULL %}
+                                <p class="bp-date"> - Published in: {{ article.pub_date }}</p>
+                            {% else %}
+                                <p class="bp-date"> - Published in: {{ article.pub_date }} | Edited in: {{ article.edit_date }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <h3 class="bp-articlebody">{{ article.content|safe|truncatewords:20 }}<span> <a href="{% url 'article-number' article.id %}">Read more</a></span></h3>
+                </div>
+                <div class="article desktop">
+                    <div class="bp">
+                        <div class="flex flex-alignit-c">
+                            <div>
+                                <h2 class="bp">
+                                    <a href="{% url 'article-number' article.id %}" class="bp-title">{{ article.title }}</a>
+                                </h2>
+                                {% if article.edit_date.year == NULL %}
+                                    <p class="bp-date"> - Published in: {{ article.pub_date }}</p>
+                                {% else %}
+                                    <p class="bp-date"> - Published in: {{ article.pub_date }} | Edited in: {{ article.edit_date }}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="bp-articlebody">{{ article.content|safe|truncatewords:20 }}<span> <a href="{% url 'article-number' article.id %}">Read more</a></span></h3>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
