@@ -28,7 +28,7 @@ with open('./portfolio/.etc/secret_key.txt') as f:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['194.233.161.133']
+ALLOWED_HOSTS = ['danieldevelops.tech', '194.233.161.133', 'localhost']
 
 
 # Application definition
