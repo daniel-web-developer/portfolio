@@ -28,7 +28,7 @@ with open('./portfolio/.etc/secret_key.txt') as f:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['danieldevelops.tech', '194.233.161.133', 'localhost']
+ALLOWED_HOSTS = ['danieldevelops.tech', 'www.danieldevelops.tech']
 
 
 # Application definition
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'csp.middleware.CSPMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -141,3 +142,13 @@ SECURE_SSL_REDIRECT = True
 SECURE_HSTS_SECONDS = 86400
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
+
+# Content Security Policy
+
+CSP_IMG_SRC = ("'self'")
+
+CSP_STYLE_SRC = ("'self'", 'https://fonts.googleapis.com')
+
+CSP_FONT_SRC = ("'self'", 'https://fonts.gstatic.com/')
+
+CSP_SCRIPT_SRC = ("'self'")
